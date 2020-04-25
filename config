@@ -209,7 +209,7 @@ bindsym Mod1+c exec killall compton
 bindsym Mod1+v exec compton
 
 #redshift
-#exec_always redshift-gtk
+exec_always redshift-gtk
 #redshift
 
 #exec_always wal -i /home/kayakalot/Pictures/.config/wall.png
@@ -222,7 +222,9 @@ bindsym $mod+Shift+d gaps inner current set 0; gaps outer current set 0
 
 # gapsconfig
 
-for_window [class="^.*"] border pixel 1
+# previous | for_window [class="^.*"] border pixel 1
+for_window [class="^.*"] border pixel 0
+# previous | gaps inner 4
 gaps inner 4
 gaps outer 0
 
