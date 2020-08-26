@@ -12,22 +12,13 @@ bindsym $mod+Return exec urxvt-256color
 
 # kill focused window
 bindsym $mod+Shift+q kill
-
                             #APPLICATION LAUNCHER#
 # start dmenu (a program launcher)
 bindsym $mod+d exec dmenu_run
-bindsym Mod1+d exec xfce4-popup-whiskermenu
-bindsym Mod1+p exec xfce4-appfinder
+bindsym Mod1+s exec xfce4-popup-whiskermenu
+#bindsym Mod1+p exec xfce4-appfinder
 for_window [class="Xfce4-appfinder" instance="xfce4-appfinder"] floating enable
-#bindsym Mod1+p exec i3-dmenu-desktop --dmenu='rofi -dmenu'
-# There also is the (new) i3-dmenu-desktop which only displays applications
-# shipping a .desktop file. It is a wrapper around dmenu, so you need that
-# installed.
-#bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
-#bindsym Mod1+d exec i3-dmenu-desktop
-#bindsym Mod1+d exec rofi -show run -lines 10 -eh 2 -width 30 -opacity "100"
                             #APPLICATION LAUNCHER#
-
 # change focus
 bindsym $mod+j focus left
 bindsym $mod+k focus down
@@ -170,49 +161,16 @@ set_from_resource $darkwhite    color7  #000000
 set_from_resource $white    color15 #000000
 set $transparent        #00000000
 
-
-
-
-# Start i3bar to display a workspace bar (plus the system information i3status
-# finds out, if available)
-#bar {
-#       colors {
-#        background #0f0f0f
-#        statusline #ffffff
-#        separator #666666
-#
-#        focused_workspace  #1c1c1c #292929 $white
-#        active_workspace   #1c1c1c #1c1c1c #ffffff
-#        inactive_workspace #1c1c1c #1c1c1c #888888
-#        urgent_workspace   #1c1c1c #1c1c1c #ffffff
-#        binding_mode       #1c1c1c #1c1c1c #ffffff
-#    }
-#    font pango:monospace 10
-#    status_command ~/.config/bumblebee-status/bumblebee-status -m pasink pasource uptime datetime kernel -p disk.path=/home datetime.format="%a %d %b %Y %I:%M:%S%p" -t iceberg
-#position top
-#    }
-
 exec_always xfce4-panel
-
-#disk# 
 exec nm-applet
-
-#exec_always pulseaudio
-
 exec --no-startup-id nitrogen --restore
-
-#exec_always killall compton
-#exec_always compton
-
 bindsym Mod1+h exec killall pulseaudio && exec pulseaudio
-bindsym Mod1+c exec killall compton
-bindsym Mod1+v exec compton
+bindsym Mod1+c exec killall picom
+bindsym Mod1+v exec picom
 
 #redshift
-exec_always redshift-gtk
+#exec_always redshift-gtk
 #redshift
-
-#exec_always wal -i /home/kayakalot/Pictures/.config/wall.png
 
 # change gaps size
 bindsym $mod+Shift+t gaps inner current set 4; gaps outer current set 0
@@ -234,34 +192,9 @@ gaps outer 0
 bindsym Mod1+Shift+d exec --no-startup-id urxvt-256color -e ranger
 bindsym Mod1+Shift+m exec --no-startup-id urxvt-256color -e ncmpcpp
 bindsym Mod1+Shift+k exec killall mpd
-#Tor shorcut
-#bindsym Mod1+t exec --no-startup-id firejail /home/kayakalot/tor-browser-linux64-8.0.5_en-US/tor-browser_en-US/Browser/start-tor-browser
-#Minecraft shortcut
-#bindsym Mod1+m exec --no-startup-id /home/kayakalot/MCscript.sh
-#Teamspeak shortcut
-#bindsym Mod1+o exec --no-startup-id /home/kayakalot/TeamSpeak3-Client-linux_amd64/ts3client_runscript.sh
-#obs shortcut
-#bindsym Mod1+u exec --no-startup-id flatpak run com.obsproject.Studio
-#killall i3bar
 bindsym Mod1+l exec killall xfce4-panel
-#exec i3bar
 bindsym Mod1+k exec xfce4-panel
-#Kdenlive Shortcut
-#bindsym Mod1+k exec --no-startup-id flatpak run org.kde.kdenlive
-#audacity shortcut
-#bindsym Mod1+y exec --no-startup-id flatpak run org.audacityteam.Audacity
-#Pycharm IDE shortcut
-#bindsym Mod1+h exec --no-startup-id /home/kayakalot/pycharm-community-2018.2.4/bin/pycharm.sh
-
-#Pywal
-
-#exec wal -i ~/.config/wall.png
-
-#killall java/minecraft
 bindsym Mod1+j exec killall java
-#exec_always killall polybar launch.sh
-#exec_always polybar example
-
 exec xrdb .Xresources
 
 #Locks system
